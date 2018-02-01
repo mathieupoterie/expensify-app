@@ -3,7 +3,13 @@
         "raf/polyfill",
         "<rootDir>/src/tests/setupTests.js"
     ],
+    "transformIgnorePatterns": [
+        "node_modules/(?!(react-native|my-project|react-native-button)/)"
+      ],
     "snapshotSerializers" : [
         "enzyme-to-json/serializer"
-    ]
+    ],
+    "transform": {
+        "^.+\\.jsx?$": "babel-jest"
+      }
 }
