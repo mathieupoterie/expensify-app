@@ -143,10 +143,10 @@ test('should test the startEditExpense from firebaseedit expenses from firebase'
         note: 'this is the note update'
     }
 
-    store.dispatch(startEditExpense((id, updates)).then(() => {
+    store.dispatch(startEditExpense(id, updates)).then(() => {
         const actions = store.getActions();
         expect(actions[0]).toEqual({
-            type: 'EDIT_EXPENSES',
+            type: 'EDIT_EXPENSE',
             id,
             updates
         });
