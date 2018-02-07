@@ -9,10 +9,11 @@ import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 import LoginPage from '../components/LoginPage';
 export const history = createHistory();
+import {IntlProvider} from 'react-intl';
 
 const AppRouter = () => (
-    <Router history={history}>
-        <div>
+    <IntlProvider locale="en">
+        <Router history={history}>
             <Switch>
                 <PublicRoute  path="/" exact={true} component={LoginPage}/>
                 <PrivateRoute path="/dashboard" component={ExpenseDashBoardPage} />
@@ -20,8 +21,8 @@ const AppRouter = () => (
                 <PrivateRoute path="/edit/:id" component={EditExpensePage} />
                 <Route component={NotFoundPage} />
             </Switch>
-        </div>
-    </Router>
+        </Router>
+    </IntlProvider>
 );
 
 export default AppRouter;

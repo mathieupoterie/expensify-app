@@ -1,19 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render ExpenseListItem with expenses[2] from the fixture 1`] = `
-<div>
-  <Link
-    replace={false}
-    to="/edit/3"
-  >
-    <h3>
+<Link
+  className="list-item"
+  replace={false}
+  to="/edit/3"
+>
+  <div>
+    <h3
+      className="list-item__title"
+    >
       Credit Card
     </h3>
-  </Link>
-  <p>
-    $45.00
-    -
-    January 5th, 1970
-  </p>
-</div>
+    <span
+      className="list-item__sub-title"
+    >
+      January 5th, 1970
+    </span>
+  </div>
+  <h3
+    className="list-item__data"
+  >
+    <FormattedNumber
+      currency="EUR"
+      style="currency"
+      value={45}
+    />
+  </h3>
+</Link>
 `;
